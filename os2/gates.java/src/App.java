@@ -27,9 +27,9 @@ public class App {
                            int gateId =Integer.parseInt(parts[0].trim().split(" ")[1]);
                            int carId =Integer.parseInt(parts[1].trim().split(" ")[1]);
                            int arrivalTime = Integer.parseInt(parts[2].trim().split(" ")[1]);
-                           int parkeId = Integer.parseInt(parts[3].trim().split(" ")[1]);
+                           int parkeDuration = Integer.parseInt(parts[3].trim().split(" ")[1]);
        
-                         Car cars = new Car(carId, arrivalTime, parkeId,gateId);
+                         Car cars = new Car(carId, arrivalTime, parkeDuration, gateId);
                          Gates gate = new Gates(cars, gateId);
                          gate.run();
                          
