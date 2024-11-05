@@ -1,17 +1,17 @@
 public class Car extends Thread {
     private final int carId;
     private final int arrivalTime; 
-    private final int parkeId;
+    private final int parkeDuration;
     private final int gateId;
 
-    public Car(int carId, int arrivalTime,int parkeId , int gateId ) {
+    public Car(int carId, int arrivalTime,int parkeDuration , int gateId ) {
         this.carId = carId;
-        this.parkeId = parkeId; 
+        this.parkeDuration = parkeDuration; 
         this.arrivalTime = arrivalTime;
         this.gateId=gateId;
     }
     public void arrive(){
-        System.out.println(carId + " " + arrivalTime + " " + parkeId );
+        System.out.println(carId + " " + arrivalTime + " " + parkeDuration );
 
     }
   
@@ -21,8 +21,8 @@ public class Car extends Thread {
     public int getGateId() {
         return gateId;
     }
-    public int getParkeId() {
-        return parkeId;
+    public int getParkeDuration() {
+        return parkeDuration;
     }
     public int getArrivalTime() {
         return arrivalTime;
