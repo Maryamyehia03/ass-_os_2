@@ -12,13 +12,17 @@ public class Gates extends Thread{
     }
 
     @Override
-    public synchronized void run(){
+    public  void run(){
         if (gateId==1) {
             System.out.println("gate 1");
            
             try {
-                 mycar.arrive();
+                Object gate1 = new Object();
+                synchronized(gate1){
+                     mycar.arrive();
                 mycar.join();
+                }
+                
             } catch (InterruptedException e) {
                 
                 e.printStackTrace();
@@ -27,8 +31,11 @@ public class Gates extends Thread{
         else if (gateId ==2) {
             System.out.println("gate 2");
             try {
-                mycar.arrive();
+                Object gate2 = new Object();
+                synchronized(gate2){
+                    mycar.arrive();
                mycar.join();
+               }
            } catch (InterruptedException e) {
                
                e.printStackTrace();
@@ -37,8 +44,11 @@ public class Gates extends Thread{
         else if (gateId == 3) {
             System.out.println("gate 3");
             try {
-                mycar.arrive();
+                Object gate3 = new Object();
+                synchronized(gate3){
+                    mycar.arrive();
                mycar.join();
+               }
            } catch (InterruptedException e) {
                
                e.printStackTrace();
