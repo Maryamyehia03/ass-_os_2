@@ -35,7 +35,7 @@ public class ParkingLot {
 
     public void Car_Leave(Car car) {
         Park_Spots.release();//this will set the spot of leaving car to be free again
-        log_activity("Car " + car.getCarId() + " from Gate " + car.getGateId() + " left after waiting for" + parkeId +". (Parking Status: " + (4 - Park_Spots.availablePermits()) + " spots occupied)");
+        log_activity("Car " + car.getCarId() + " from Gate " + car.getGateId() + " left after waiting for" + car.getParkeDuration() +". (Parking Status: " + (4 - Park_Spots.availablePermits()) + " spots occupied)");
     }
 
     public void log_activity(String message) {
