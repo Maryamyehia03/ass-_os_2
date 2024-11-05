@@ -29,7 +29,7 @@ public class App {
                            int arrivalTime = Integer.parseInt(parts[2].trim().split(" ")[1]);
                            int parkeId = Integer.parseInt(parts[3].trim().split(" ")[1]);
        
-                         Car cars = new Car(carId, arrivalTime, parkeId);
+                         Car cars = new Car(carId, arrivalTime, parkeId,gateId);
                          Gates gate = new Gates(cars, gateId);
                          gate.run();
                          
